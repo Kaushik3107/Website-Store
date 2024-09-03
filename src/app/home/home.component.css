@@ -1,0 +1,68 @@
+/* .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+   */
+
+   /* Carousel Styling */
+.carousel-inner img {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+/* Product Cards Styling */
+.col-md-2 {
+  
+  width: 25%;
+}
+.card {
+  
+  border: none;
+  transition: transform 0.3s ease;
+  margin: 15px 15px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  margin-top: 10px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #2874f0;
+  border-color: #2874f0;
+  font-size: 12px;
+}
+
+h4 {
+  font-weight: bold;
+}
