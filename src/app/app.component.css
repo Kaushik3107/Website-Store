@@ -1,13 +1,9 @@
-/* Add any global styles or root component styles here */
 
-/* Example: A global background color */
 body {
     background-color: #f5f5f5;
     margin: 0;
     font-family: Arial, sans-serif;
   }
-  
-  /* Ensures that the router outlet fills the remaining space */
   router-outlet {
     display: block;
   }

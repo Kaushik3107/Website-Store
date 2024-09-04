@@ -20,9 +20,12 @@
   <div class="d-flex align-items-center">
     <a class="nav-link text-dark" routerLink="/cart">
       <i class="fas fa-shopping-cart"></i> Cart
+      <span class="badge badge-pill badge-danger">{{ cartCount }}</span>
     </a>
+
     <a class="nav-link text-dark" routerLink="/wishlist">
       <i class="fa-regular fa-heart"></i> Wishlist
+      <span class="badge badge-pill badge-danger">{{ wishlistCount }}</span>
     </a>
     <a *ngIf="!isLoggedIn" class="nav-link text-dark" routerLink="/login">
       <i class="fas fa-user"></i> Login

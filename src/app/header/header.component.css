@@ -32,6 +32,10 @@
     cursor: pointer;
   }
   
+  .badge {
+    background-color: rgb(240, 125, 125);
+    color: rgb(0, 0, 0);
+  }
   .nav-link i {
     margin-right: 5px;
   }

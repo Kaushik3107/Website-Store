@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 export interface Product {
   id: string;
@@ -13,9 +13,11 @@ export interface Product {
 })
 export class CartService {
   private cart: Product[] = []; // Explicitly type the array
+  cartUpdated = new EventEmitter<void>();
 
   addToCart(product: Product) {
     this.cart.push(product);
+    this.cartUpdated.emit();
     console.log(this.cart); // Check the contents of the cart
   }
 
@@ -27,6 +29,7 @@ export class CartService {
     const index = this.cart.indexOf(product);
     if (index > -1) {
       this.cart.splice(index, 1);
+      this.cartUpdated.emit();
     }
   }
 }

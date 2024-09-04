@@ -9,12 +9,14 @@ import { WishlistService } from '../wishlist.service';
 })
 export class WishlistComponent {
   wishItems: Product[] = []; // Explicitly type the array
-  discountAmount = 100; // Discount amount (could be dynamic)
 
   constructor(private wishService: WishlistService) {}
 
   ngOnInit() {
     this.wishItems = this.wishService.getwishItems();
+    this.wishService.wishlistUpdated.subscribe(() => {
+      this.wishItems = this.wishService.getwishItems();
+    });
   }
 
   removeFromwish(item: Product) {

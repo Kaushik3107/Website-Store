@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Product } from './cart.service';
 
 @Injectable({
@@ -6,9 +6,11 @@ import { Product } from './cart.service';
 })
 export class WishlistService {
   private wish: Product[] = []; // Explicitly type the array
+  wishlistUpdated = new EventEmitter<void>();
 
   addTowish(product: Product) {
     this.wish.push(product);
+    this.wishlistUpdated.emit();
     console.log(this.wish); // Check the contents of the wish
   }
 
@@ -20,6 +22,7 @@ export class WishlistService {
     const index = this.wish.indexOf(product);
     if (index > -1) {
       this.wish.splice(index, 1);
+      this.wishlistUpdated.emit();
     }
   }
 }
